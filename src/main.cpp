@@ -14,7 +14,7 @@ const long interval = 30;
 double n;
 double n2;
 double n3;
-float increase = 0.01;
+float increase = 0.005;
 float x = 0.0;
 float y = 0.0;
 
