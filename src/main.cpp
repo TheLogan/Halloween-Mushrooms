@@ -17,8 +17,6 @@ double n3;
 float increase = 0.01;
 float x = 0.0;
 float y = 0.0;
-float y2 = 0.3;
-float y3 = 0.3;
 
 void setup()
 {
@@ -43,9 +41,9 @@ void loop()
   {
     previousMillis = currentMillis;
 
-    n = sn.noise(x, y);
-    n2 = sn.noise(x, y2);
-    n3 = sn.noise(x, y3);
+    n = sn.noise(x - 0.05, y);
+    n2 = sn.noise(x, y);
+    n3 = sn.noise(x + 0.05, y);
     x += increase;
     n = ((n + 1) * 0.5) * 4095;   // 2047
     n2 = ((n2 + 1) * 0.5) * 4095; // 2047
@@ -57,7 +55,6 @@ void loop()
       PCA2.setPWM(i, 0, n2);
       PCA3.setPWM(i, 0, n3);
     }
-
     Serial.println(n);
   }
 }
